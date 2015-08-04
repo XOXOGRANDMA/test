@@ -14,11 +14,6 @@ namespace Credit_Card_Number_validator
     {
         /// <summary>
         /// Todo: only display numbers that pass the luhn algorithm if generated
-        /// Todo: look into CVV algorithm
-        /// Todo: bogus address creator
-        /// Todo: bogus phone number generator
-        /// Todo: bogus name generator
-        /// Todo: Display bogus "identity" in separate form. Read-only.
         /// </summary>
         public Form1()
         {
@@ -94,7 +89,10 @@ namespace Credit_Card_Number_validator
             try
             {
                 long r = longRandom(Math.Abs(4000000000000000), Math.Abs(4999999999999999), new Random());
-                maskedTextBox1.Text = r.ToString();
+                string input = maskedTextBox1.Text;
+                bool isValid = Mod10Check(input);
+
+
             }
             catch (Exception vex)
             {
@@ -137,6 +135,20 @@ namespace Credit_Card_Number_validator
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void fakeNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            identity newForm = new identity();
+            newForm.Show();
+            Random address = new Random();
+            string[] streetName = { "Smith", "Tailfeather", "Scoop", "Rennault", "Linger", "Scrim", "Lilac", "Oasis", "Shore", "Candy", "Sahara", "Ling", "Draft", "Course" };
+            string[] streetSuffix = { "Dr.", "St.", "Ln.", "Lp.", "Blvd" };
+            string[] City = { "Helena", "Holiday", "Shingo", "Gaila", "Oldsmar", "Grenton", "Parston", "Lexington", "Remart", "Hepster" };
+            string[] State = { "Maine", "Vermont", "New Hampshire", "New York", "Pennsylvania", "New Jersey", "Hawaii", "Illinois", "Oklahoma", "Colorado" };
+            string resultStreet = address.Next(Math.Abs(1000), Math.Abs(10000)).ToString() + " " + streetName[address.Next(streetName.Length)].ToString() + ", " +
+            streetSuffix[address.Next(streetSuffix.Length)].ToString() + ", " + City[address.Next(City.Length)] + " " + State[address.Next(State.Length)] + " " + address.Next(Math.Abs(10000), Math.Abs(99999));
+            
         }
 
     }

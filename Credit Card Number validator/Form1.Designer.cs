@@ -36,6 +36,7 @@
             this.visaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.discoverToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fakeNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +65,7 @@
             this.maskedTextBox1.Location = new System.Drawing.Point(12, 54);
             this.maskedTextBox1.Mask = "0000000000000000";
             this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.PromptChar = ' ';
             this.maskedTextBox1.Size = new System.Drawing.Size(115, 20);
             this.maskedTextBox1.TabIndex = 3;
             this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -85,7 +87,8 @@
             this.generateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.visaToolStripMenuItem,
             this.discoverToolStripMenuItem,
-            this.masterCardToolStripMenuItem});
+            this.masterCardToolStripMenuItem,
+            this.fakeNameToolStripMenuItem});
             this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
             this.generateToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.generateToolStripMenuItem.Text = "Generate";
@@ -112,6 +115,13 @@
             this.masterCardToolStripMenuItem.Text = "MasterCard";
             this.masterCardToolStripMenuItem.Click += new System.EventHandler(this.masterCardToolStripMenuItem_Click);
             // 
+            // fakeNameToolStripMenuItem
+            // 
+            this.fakeNameToolStripMenuItem.Name = "fakeNameToolStripMenuItem";
+            this.fakeNameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.fakeNameToolStripMenuItem.Text = "Identity";
+            this.fakeNameToolStripMenuItem.Click += new System.EventHandler(this.fakeNameToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,7 +133,10 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Credit Card Validator";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -142,6 +155,7 @@
         private System.Windows.Forms.ToolStripMenuItem visaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem discoverToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem masterCardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fakeNameToolStripMenuItem;
     }
 }
 
